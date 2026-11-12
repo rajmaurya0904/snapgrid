@@ -11,3 +11,6 @@ class GridOverlay:
         """Return the nearest multiple of baseline to y (rounding down)."""
         return (y // self.baseline) * self.baseline
 
+    def generate_css(self) -> str:
+        """Return CSS defining a horizontal grid using the baseline."""
+        return f"background-size: 100% {self.baseline}px;"

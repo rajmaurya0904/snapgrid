@@ -2,29 +2,42 @@
 
 **An interactive visual grid overlay for web pages that lets designers snap elements to a configurable baseline, filling the gap where no easy-to-use browser extension exists.**
 
-<!-- THE PROBLEM: 2-3 concrete lines on the annoying thing this removes. -->
+Every time you build a web layout from scratch, vertical rhythm drifts. Designing without live baseline guides means manual pixel nudging, inconsistent typography spacing, and endless inspection in developer tools.
 
 ## Example
 
-<!-- A real command and its REAL pasted output. Run it first. -->
+Generate CSS for a 20px baseline grid overlay:
+
+```python
+from snapgrid.grid import GridOverlay
+print(GridOverlay(20).generate_css())
+```
+
+```css
+background-size: 100% 20px;
+```
 
 ## Install
 
 ```bash
-pip install -e ".[dev]"
+pip install -e .
 ```
 
 ## Usage
 
-<!-- The 2-4 commands people actually need, one line each. -->
+- Python API: initialize `GridOverlay(baseline)` and call `generate_css()`.
+- Command-line interface: run `snapgrid` to print generated overlay CSS.
 
 ## How it works
 
-<!-- 3-6 bullets: what it checks, computes or produces. -->
+- Stores a configurable baseline pixel integer.
+- Computes baseline grid overlay CSS rules.
+- Emits standard properties including `background-size`.
 
 ## Limitations
 
-<!-- Honest and short: what it does NOT do, known gaps. -->
+- Does not currently render an interactive browser UI.
+- Generates horizontal baseline grid CSS rules only.
 
 ## Development
 

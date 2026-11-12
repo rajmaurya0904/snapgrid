@@ -5,3 +5,4 @@ configurable baseline, filling the gap where no easy-to-use browser extension ex
 """
 
 __version__ = "0.1.0"
+__all__ = ["__version__"]

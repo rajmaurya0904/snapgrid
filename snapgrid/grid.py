@@ -6,3 +6,8 @@ class GridOverlay:
 
     def __init__(self, baseline: int) -> None:
         self.baseline = baseline
+
+    def snap_position(self, y: int) -> int:
+        """Return the nearest multiple of baseline to y (rounding down)."""
+        return (y // self.baseline) * self.baseline
+
